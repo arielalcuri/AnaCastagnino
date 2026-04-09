@@ -102,9 +102,9 @@ img {
     height: 60px;
     width: auto;
     transition: transform 0.3s ease;
-    /* Difuminado suave para que los bordes del logo se mimetice sin líneas duras */
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 50%, transparent 100%);
-    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 50%, transparent 100%);
+    /* Difuminado agresivo hacia el centro para asegurar que los bordes sean 100% invisibles */
+    -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 50%, black 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse closest-side at 50% 50%, black 30%, transparent 100%);
 }
 
 .logo:hover {
