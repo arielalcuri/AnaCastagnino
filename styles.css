@@ -80,7 +80,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    background-color: #26436d; /* Color extraído directamente de la esquina del logo */
     box-shadow: 0 2px 20px var(--shadow);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -103,9 +103,6 @@ img {
     width: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     transition: transform 0.3s ease;
-    /* Máscara radial para difuminar los bordes del logo y lograr una transición perfecta con el fondo */
-    -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
-    mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
 }
 
 .logo:hover {
