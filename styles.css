@@ -104,9 +104,9 @@ img {
 }
 
 .logo {
-    height: 60px;
+    height: 105px;
     width: auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, height 0.3s ease;
     /* Difuminado agresivo hacia el centro para asegurar que los bordes sean 100% invisibles */
     -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 50%, black 30%, transparent 100%);
     mask-image: radial-gradient(ellipse closest-side at 50% 50%, black 30%, transparent 100%);
@@ -958,7 +958,7 @@ img {
 @media (max-width: 768px) {
     .nav-list {
         position: fixed;
-        top: 90px;
+        top: 135px;
         left: 0;
         right: 0;
         background: var(--primary-dark);
