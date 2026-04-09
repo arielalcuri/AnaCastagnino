@@ -80,10 +80,15 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #26436d; /* Color extraído directamente de la esquina del logo */
-    box-shadow: 0 2px 20px var(--shadow);
+    background-color: transparent; /* Ahora iniciará sin fondo o mismo tono que hero */
+    box-shadow: none; /* Sombra eliminada al tope para fusión total */
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: #26436d; /* Fondo azul cuando hacemos scroll */
+    box-shadow: 0 2px 20px var(--shadow); /* Sombra solo al escrolear */
 }
 
 .header .container {
