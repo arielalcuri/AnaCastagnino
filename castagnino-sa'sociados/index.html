@@ -292,7 +292,10 @@
 
                 <div class="contact-form-wrapper">
                     <h3>Envianos tu consulta</h3>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/contacto@acastagnino.com.ar" method="POST">
+                        <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web Ana Castagnino">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://acastagnino.com.ar/#contacto">
                         <div class="form-group">
                             <label for="nombre">Nombre Completo</label>
                             <input type="text" id="nombre" name="nombre" required>
