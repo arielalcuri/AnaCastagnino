@@ -125,16 +125,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Simular envío
+            // Envío real a Web3Forms
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                showNotification('¡Gracias por contactarnos! Le responderemos a la brevedad.', 'success');
-                contactForm.reset();
+            const formData = new FormData(contactForm);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('¡Gracias por contactarnos! Le responderemos a la brevedad.', 'success');
+                    contactForm.reset();
+                } else {
+                    showNotification('Hubo un problema al enviar. Inténtalo nuevamente.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                showNotification('Error de red. Por favor, intenta de nuevo.', 'error');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+            });
         });
     }
 
