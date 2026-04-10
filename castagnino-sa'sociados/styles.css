@@ -647,17 +647,17 @@ img {
 
 .contact-info {
     display: grid;
-    gap: 25px;
+    gap: 15px;
 }
 
 .contact-card {
     background: var(--white);
-    padding: 25px;
+    padding: 15px 20px;
     border-radius: 4px;
     box-shadow: 0 4px 15px var(--shadow-light);
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
     transition: all 0.3s ease;
 }
 
@@ -667,8 +667,8 @@ img {
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     flex-shrink: 0;
     padding: 10px;
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
@@ -686,18 +686,18 @@ img {
 
 .contact-card h3 {
     font-family: 'Lato', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--primary-dark);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .contact-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--gray-dark);
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .contact-form-wrapper {
