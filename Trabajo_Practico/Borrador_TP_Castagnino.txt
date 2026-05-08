@@ -1,0 +1,136 @@
+# Trabajo Práctico: Gestión de Proyectos - Castagnino Sá & Asociados
+
+**¡Importante para tu Word/PDF!**
+Recuerda configurar tu documento de texto antes de pegar este contenido:
+*   **Tamaño de página:** Carta.
+*   **Márgenes:** 1 pulgada (2.54 cm) en todos los lados.
+*   **Fuente:** Arial 11, Interlineado doble.
+*   **Alineación:** Izquierda, sangría de primera línea de 1.27 cm (½ pulgada).
+*   **Numeración:** Arriba a la derecha.
+
+---
+
+## 1. Carátula
+
+*(Crea una página exclusiva para esto)*
+**[Logo: Puedes hacer una captura de la web de Ana Castagnino y ponerla aquí]**
+**Nombre del Proyecto:** Integración de Asistente Virtual Inteligente (IA) para Mesa de Entradas
+**Integrantes:** [Nombres y DNI]
+**Instituto:** [Nombre]
+**Materia:** TSCD - Gestión De Proyectos
+**Profesor:** [Nombre]
+**Fecha:** 27/04/2026
+
+---
+
+## 2. Definición Del Proyecto
+
+### 2.1 Contexto
+*   **Descripción de la organización:** Castagnino Sá & Asociados es una firma o estudio de profesionales independientes. Actualmente atraen clientes potenciales y reciben consultas a través de su página web estática (acastagnino.com.ar).
+*   **Área con ventaja estratégica:** Departamento de "Atención al Cliente / Mesa de Entradas". La implementación de IA agilizará radicalmente el primer contacto con los prospectos.
+*   **Ambiente informático actual:** Tienen un ambiente básico; una página web estática (`index.html`, `script.js`, `styles.css`) desplegada en una plataforma de hosting (Cloudflare/GitHub Pages) con un formulario tradicional que envía correos vía un servicio simple (ej. Web3Forms) a la casilla info@acastagnino.com.ar. La clasificación de las consultas se hace de modo manual enviando correos, lo cual no es escalable. 
+
+### 2.2 Project Charter (Acta de Constitución)
+*   **Problema que manifiesta el cliente:** El estudio recibe un volumen creciente de consultas básicas (precios, horarios, disponibilidad) que quitan tiempo a los profesionales. Consultas complejas se demoran en ser respondidas porque se pierden en una bandeja de entrada masiva, generando insatisfacción en prospectos.
+*   **Expectativas y necesidades:** Reducir el tiempo de primera respuesta a 0, filtrar automáticamente las dudas sencillas y clasificar los contactos importantes derivándolos rápidamente al profesional adecuado.
+*   **Propuesta de solución:** Desarrollo e integración de un "Asistente Virtual" (Chatbot) basado en Procesamiento de Lenguaje Natural (IA/LLM). El mismo se incrustará en el Front-End (HTML/JS) actual y se conectará mediante API a un Backend inteligente entrenado con el conocimiento del estudio.
+*   **Alcance:** Entrenar el modelo de IA con la información de la firma (FAQs), crear la API en el backend, modificar el front-end estático para alojar el chat, probar y poner en producción. No incluye la automatización completa de casos legales o contables, solo la mesa de ayuda inicial.
+*   **Tiempo Global:** 47 días laborables.
+*   **Costo Global:** Estimado $6.500 USD (Software de IA, horas de Data Science, Development y PM).
+
+### 2.3 Plan de hitos
+1. Firma del Project Charter y Kick-off (Día 1)
+2. Aprobación Documento de Requisitos SRS (Día 8)
+3. Arquitectura y Modelos UI definidos (Día 12)
+4. Modelo IA entrenado y backend funcional (Día 29)
+5. Sistema integrado (Front e IA conectados) (Día 35)
+6. Pruebas de aceptación UAT aprobadas por el Cliente (Día 44)
+7. Pase a Producción y Cierre (Día 47)
+
+### 2.4 Matriz RACI
+*(Roles: PM = Project Manager, DS = Data Scientist, FS = Full Stack Dev, QA = Tester, ST = Stakeholders / Ana Castagnino)*
+
+| Entregables / Tareas | PM | DS | FS | QA | ST |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Redacción SRS | R/A | C | I | - | C |
+| Curación Dataset IA | A | R | - | - | C |
+| Entrenamiento Modelo IA | A | R | - | - | I |
+| Desarrollo e Integración UI | A | C | R | - | I |
+| Pruebas de Aceptación (UAT)| A | I | I | R | C |
+| Pase a Producción | R/A | - | C | - | C |
+
+### 2.5 Matriz de Stakeholders
+*   **Socios (Ana Castagnino y equipo directivo):** Son los patrocinadores y dueños del negocio. Su interés y poder es vital para validar el modelo de IA. *(Alto Poder / Alto Interés - Gestionar Atentamente)*.
+*   **Project Manager:** Líder del equipo de ejecución. *(Alto Poder / Alto Interés - Colaborar estrechamente)*.
+*   **Visitantes de la web (Clientes/Prospectos):** Quienes interactuarán con el Agente de IA. No toman decisiones, pero el producto es para ellos. *(Bajo Poder / Alto Interés - Mantener informados y medir satisfacción)*.
+*   **Servicio de Hosting/IT Tercerizado:** Proveedores de la infraestructura base. *(Bajo Poder / Bajo Interés - Monitorear mínimamente)*.
+
+---
+
+## 3. Planificación
+
+### 3.1 Documento SRS (Especificaciones de Requisitos)
+**Requisitos Funcionales:**
+*   El sistema debe recibir entradas de texto natural del usuario desde la interfaz web.
+*   El sistema debe clasificar la intención del usuario y proveer la respuesta predefinida si el porcentaje de confianza es >75%.
+*   Si el requerimiento es complejo (confianza <75%), el bot le solicitará al cliente su email para derivarlo a la atención humana y abrir un ticket en el estudio.
+**Requisitos No Funcionales:**
+*   Tiempo de respuesta de la IA menor a 2 segundos garantizando la inmediatez.
+*   El diseño UI del chat debe usar los mismos estilos visuales definidos en el archivo `styles.css` actual.
+*   Alta disponibilidad (SLA 99.9%).
+
+### 3.2 Gráfico WBS (Work Breakdown Structure)
+*(Te recomiendo graficar esta jerarquía de árbol en Word, Visio o Draw.io)*
+1. Proyecto Integración IA (Nivel 1)
+   1.1 Gestión del Proyecto (Nivel 2)
+       1.1.1 Relevamiento (Nivel 3)
+       1.1.2 Requisitos (SRS)
+   1.2 Diseño
+       1.2.1 UI/UX Chatbot
+       1.2.2 Arquitectura Backend
+   1.3 Desarrollo
+       1.3.1 Curación Dataset
+       1.3.2 Entrenamiento NLP/LLM
+       1.3.3 Backend IA
+       1.3.4 Frontend Web
+   1.4 Calidad y Pruebas
+   1.5 Despliegue y Cierre
+
+### 3.3 Plan de Tareas (Para cargar en Project Libre)
+
+| ID | Nombre de la tarea | Duración (en días) | ID Precedente | Entregable | Recursos |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| **1** | Relevamiento de procesos y respuestas | 4 | | Doc Relevamiento | PM, ST |
+| **2** | Confeccionar Diagrama Casos de Uso | 3 | 1 | Casos de Uso | DS, PM |
+| **3** | Redactar el Documento SRS | 1 | 2 | Doc. SRS | PM |
+| **4** | Aprobación Técnica y Firma de Negocio | 1 | 3 | SRS Firmado | PM, ST |
+| **5** | Diseño Arquitectura IA y diagrama BBDD | 4 | 4 | Doc Arquitectura | DS, FS |
+| **6** | Diseño Mockups de Interfaz del Chat (UI) | 3 | 4 | Prototipo UI | FS |
+| **7** | Curación de Dataset de entrenamiento | 5 | 4 | Archivo CSV/JSON | DS, ST |
+| **8** | Entrenamiento y Pruebas de Modelo IA | 10 | 5, 7 | Modelo Versionado| DS |
+| **9** | Desarrollo API Backend (Python/Node) | 6 | 5 | Código en Repos. | FS |
+| **10**| Modificación Frontend (HTML/CSS/JS) | 7 | 6, 9 | Web Actualizada | FS |
+| **11**| Integración de los componentes (Front+Back)| 4 | 8, 10 | Informe Integr. | FS, DS |
+| **12**| Ejecución Pruebas de QA y Casos Uso | 3 | 11 | Bug Tracker | QA |
+| **13**| Debugging y Corrección Final | 3 | 12 | Release Candidate| FS |
+| **14**| Beta Testing final con Stakeholders (UAT)| 4 | 13 | Acta UAT Aprobada| QA, ST, PM |
+| **15**| Despliegue Web a Producción (Cloudflare) | 1 | 14 | Log Deploy | FS |
+| **16**| Acta de Cierre y Traspaso | 1 | 15 | Carta Cierre | PM, ST |
+
+*(Nota: En tu Project Libre debes crear cada "Recurso" en la solapa de recursos (PM, DS, FS, QA, ST) y ponerles un costo horario, por ejemplo: 20 USD/hora para el PM, etc.)*
+
+### 3.4 Armar El PERT/CPM
+*(Dibuja esta red en draw.io o tu herramienta de preferencia a mano)*
+*   El **Camino Crítico** está formado por la secuencia más larga de tareas dependientes que definen cuando termina del proyecto. 
+*   **Cálculo camino crítico:** `1 -> 2 -> 3 -> 4 -> 7 -> 8 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16`. (Duración: 4+3+1+1+5+10+4+3+3+4+1+1 = **40 días**)
+*(La tarea 6, 9 y 10 tienen holgura ya que van en paralelo con los hitos de IA que demoran más).*
+
+---
+
+## 4 y 5. Instrucciones para Ejecución, Monitoreo y Cierre (Anexo)
+
+Una vez que tengas armado el Project Libre con las tareas y calendarios:
+1. **Línea Base 0:** Ve al botón de "Linea Base" o "Save Baseline".
+2. **Ejecución y Cambios:** Simula (en la tarea de "Desarrollo API Backend") que les tomó 8 días en vez de 6. Actualiza el progreso de esa tarea y las pasadas al 100%. 
+3. **Línea Base 1:** Guarda nuevamente el progreso en "Linea Base 1".
+4. **Anexo para el PDF:** Saca capturas de pantalla de tu diagrama de Gantt en el Project Libre mostrando cómo se desfasó el cronograma por esos 2 días extra o, si pudiste recortar ese tiempo en el "Debugging", mostrar cómo nivelaste la curva. Usa la vista de **"Uso de Tareas / Costos"** del Project para obtener el costo Total presupuestado vs real, y explícalo en 2 párrafos al final del PDF en "Cierre".
