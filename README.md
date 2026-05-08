@@ -16,7 +16,6 @@ Sitio web oficial del Estudio Jurídico **Castagnino Sá & Asociados**, especial
 
 ## 📁 Estructura del Proyecto
 - `/castagnino-sa'sociados`: Directorio principal del sitio web (HTML, CSS, JS).
-- `/Trabajo_Practico`: Documentación adicional y borradores del proyecto.
 
 ## 🌐 Despliegue
 El sitio está disponible en: [acastagnino.com.ar](https://acastagnino.com.ar)
